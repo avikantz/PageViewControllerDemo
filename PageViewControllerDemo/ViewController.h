@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+
+- (IBAction)replayIntro:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *replayIntroButton;
 
 @end
 

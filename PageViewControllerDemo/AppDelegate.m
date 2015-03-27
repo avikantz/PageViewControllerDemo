@@ -17,6 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	
+	[[NSUserDefaults standardUserDefaults] setInteger:[[NSUserDefaults standardUserDefaults] integerForKey:@"TimesLaunched"]+1 forKey:@"TimesLaunched"];
+	[[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"ShowIntro"];
+	NSLog(@"Times Launched = %i", (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"TimesLaunched"]);
+	if ([[NSUserDefaults standardUserDefaults] integerForKey:@"TimesLaunched"] == 1)
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ShowIntro"];
+	
+	UIPageControl *pageControl = [UIPageControl appearance];
+	pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
+	pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+	pageControl.backgroundColor = [UIColor clearColor];
+	
 	return YES;
 }
 
