@@ -36,7 +36,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZ8-CY-uAy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="-296"/>
+            <point key="canvasLocation" x="1554" y="362"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="cbi-BZ-weM">
@@ -47,7 +47,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dbh-SG-IF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548" y="362"/>
+            <point key="canvasLocation" x="2200" y="-296"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="J8l-GH-1bP">
@@ -61,11 +61,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a0X-aG-mKH">
-                                <rect key="frame" x="-20" y="-20" width="640" height="640"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="fyK-ZL-hvA">
-                                <rect key="frame" x="20" y="420" width="560" height="40"/>
+                                <rect key="frame" x="20" y="404" width="560" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="164" id="fxF-ja-63b"/>
                                     <constraint firstAttribute="height" constant="40" id="rcR-0a-ryh"/>
@@ -80,9 +77,9 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="Ure-do-6Bt">
-                                <rect key="frame" x="16" y="460" width="568" height="80"/>
+                                <rect key="frame" x="16" y="444" width="568" height="96"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="ac6-g6-Fw1"/>
+                                    <constraint firstAttribute="height" constant="96" id="ac6-g6-Fw1"/>
                                     <constraint firstAttribute="height" constant="164" id="oNw-iX-EdN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="20"/>
@@ -118,10 +115,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="a0X-aG-mKH" firstAttribute="leading" secondItem="6Ou-Ny-XNW" secondAttribute="leadingMargin" constant="-36" id="0Rc-nH-lZe"/>
-                            <constraint firstItem="a0X-aG-mKH" firstAttribute="top" secondItem="6Ou-Ny-XNW" secondAttribute="topMargin" constant="-20" id="19F-6z-xRt"/>
                             <constraint firstItem="Ure-do-6Bt" firstAttribute="top" secondItem="fyK-ZL-hvA" secondAttribute="bottom" id="6js-sZ-Rro"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a0X-aG-mKH" secondAttribute="trailing" constant="-36" id="8CG-Mu-Wp3"/>
                             <constraint firstItem="Ure-do-6Bt" firstAttribute="leading" secondItem="6Ou-Ny-XNW" secondAttribute="leadingMargin" id="Ckb-aa-G9K"/>
                             <constraint firstItem="CPl-2i-kZM" firstAttribute="centerX" secondItem="fyK-ZL-hvA" secondAttribute="centerX" id="D2K-mb-hDn"/>
                             <constraint firstItem="CPl-2i-kZM" firstAttribute="top" secondItem="txN-0S-zuq" secondAttribute="bottom" constant="140" id="DfH-m3-bjU"/>
@@ -129,17 +123,18 @@
                             <constraint firstItem="CPl-2i-kZM" firstAttribute="top" secondItem="txN-0S-zuq" secondAttribute="bottom" constant="24" id="HUo-vh-MxW"/>
                             <constraint firstItem="fyK-ZL-hvA" firstAttribute="top" secondItem="CPl-2i-kZM" secondAttribute="bottom" constant="100" id="KWk-T2-t3k"/>
                             <constraint firstItem="Ure-do-6Bt" firstAttribute="trailing" secondItem="6Ou-Ny-XNW" secondAttribute="trailingMargin" id="Kvw-Qa-kqx"/>
+                            <constraint firstAttribute="centerY" secondItem="CPl-2i-kZM" secondAttribute="centerY" constant="166" id="OLM-U5-cth"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fyK-ZL-hvA" secondAttribute="trailing" constant="4" id="UcE-te-dnu"/>
                             <constraint firstItem="fyK-ZL-hvA" firstAttribute="leading" secondItem="6Ou-Ny-XNW" secondAttribute="leadingMargin" constant="4" id="YXj-IR-alB"/>
                             <constraint firstItem="jFv-QY-deE" firstAttribute="top" secondItem="fyK-ZL-hvA" secondAttribute="bottom" constant="156" id="daX-8r-lwA"/>
                             <constraint firstItem="fyK-ZL-hvA" firstAttribute="centerX" secondItem="Ure-do-6Bt" secondAttribute="centerX" id="eTA-gM-ENB"/>
-                            <constraint firstItem="jFv-QY-deE" firstAttribute="top" secondItem="a0X-aG-mKH" secondAttribute="bottom" constant="-20" id="nwE-A1-8mm"/>
                             <constraint firstItem="jFv-QY-deE" firstAttribute="top" secondItem="Ure-do-6Bt" secondAttribute="bottom" constant="60" id="rch-mw-Wpo"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="DfH-m3-bjU"/>
                                 <exclude reference="GpN-Pc-4zA"/>
+                                <exclude reference="HUo-vh-MxW"/>
                                 <exclude reference="KWk-T2-t3k"/>
                                 <exclude reference="eTA-gM-ENB"/>
                                 <exclude reference="daX-8r-lwA"/>
@@ -147,7 +142,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="backgroundImageView" destination="a0X-aG-mKH" id="FVg-zL-KmS"/>
                         <outlet property="iconImageView" destination="CPl-2i-kZM" id="sLi-0B-5Be"/>
                         <outlet property="subtitleLabel" destination="Ure-do-6Bt" id="kHS-xF-gGT"/>
                         <outlet property="titleLabel" destination="fyK-ZL-hvA" id="4sJ-dP-Qth"/>

@@ -66,10 +66,15 @@
 	skipButton.layer.borderColor = [UIColor whiteColor].CGColor;
 	[skipButton addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
 
-	if (!_backgroundImageView.image)
-		_backgroundImageView.image = [UIImage imageNamed:[[_data objectAtIndex:0]objectAtIndex:2]];
+	_backgroundImageView.image = [UIImage imageNamed:[[_data objectAtIndex:0]objectAtIndex:2]];
+	_backgroundImageView.clipsToBounds = YES;
 	
-	
+	[[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidChangeStatusBarOrientationNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+		if (SWidth > SHeight)
+			[skipButton setFrame:CGRectMake(SWidth/2 - 100, SHeight - 80, 200, 44)];
+		else
+			[skipButton setFrame:CGRectMake(SWidth/2 - 100, SHeight - 92, 200, 44)];
+	}];
 }
 
 -(void)swipeDown:(UISwipeGestureRecognizer *)recognizer {
@@ -118,9 +123,8 @@
 - (void)pageViewController:(UIPageViewController *)pageViewController
 willTransitionToViewControllers:(NSArray *)pendingViewControllers {
 	PageContentViewController *pcvc = [pendingViewControllers objectAtIndex:0];
-	NSLog(@"Page Index : %li", pcvc.pageIndex);
 	[UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-		_backgroundImageView.layer.transform = CATransform3DMakeScale(0.9, 0.9, 0.9);
+		_backgroundImageView.layer.transform = CATransform3DMakeScale(0.96, 0.96, 0.96);
 		_backgroundImageView.alpha = 0.7;
 	} completion:^(BOOL finished) {
 		_backgroundImageView.image = [UIImage imageNamed:[[_data objectAtIndex:pcvc.pageIndex]objectAtIndex:2]];
@@ -132,6 +136,17 @@ willTransitionToViewControllers:(NSArray *)pendingViewControllers {
 	if (pcvc.pageIndex == [_data count]) {
 		[self dismissViewControllerAnimated:YES completion:nil];
 	}
+}
+
+-(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
+//		[UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+//			_backgroundImageView.alpha = 0.7;
+//		} completion:^(BOOL finished) {
+//			_backgroundImageView.image = [UIImage imageNamed:[[_data objectAtIndex:[self presentationIndexForPageViewController:pageViewController]]objectAtIndex:2]];
+//			[UIView animateWithDuration:0.15 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+//				_backgroundImageView.alpha = 1.0;
+//			} completion:nil];
+//		}];
 }
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
